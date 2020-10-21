@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="{% static 'css/stylesheet.css' %}" rel="stylesheet">
+
+  <title>Available stock</title>
+  
+</head>
+
+<body>
+   
+   {{txt}}<br>
+
+  {% for instance in queryset%}
+  
+  {{instance.item_name}} {{instance.quantity}}<br>
+  
+  {% endfor %} 
+  
+</body>
+</html>
