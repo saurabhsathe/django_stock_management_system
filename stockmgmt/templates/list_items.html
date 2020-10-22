@@ -2,21 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <title>Available stock</title>
   
 </head>
 
 <body>
    
-   {{txt}}<br>
+   <h1>{{txt}}</h1>
+<div class="container">
+    <table class="table table-hover table-responsive table-bordered">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        
+      </tr>
+    </thead>
+ <tbody>
+      
 
   {% for instance in queryset%}
-  
-  {{instance.item_name}} {{instance.quantity}}<br>
-  
+      <tr>
+        <td>{{instance.item_name}}</td>
+        <td>{{instance.quantity}}</td>
+      </tr>
   {% endfor %} 
+      </tbody>
+  </table>
+
+
+</div>
   
 </body>
 </html>
